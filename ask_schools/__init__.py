@@ -1,4 +1,4 @@
-__version__ = '0.2.2'
+__version__ = '0.2.3'
 
 school_name = {
     'Toronto':{'suffix':'_tor', 'short':'Toronto', 'full':'University of Toronto'},
@@ -23,7 +23,7 @@ school_name = {
     'Ottawa':{'suffix':'_ott', 'short':'Ottawa', 'full':'Ottawa University'}
 }
 
-def find_schools_by_mentee_suffix(operator: str) -> str:
+def find_school_by_operator_suffix(operator: str) -> str:
     """from a suffix find the short name of that School
     
     Arguments:

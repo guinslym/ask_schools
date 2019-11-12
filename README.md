@@ -21,17 +21,15 @@ pip install ask_schools
 
 ## Usage
 
-### CLI
-
 
 Example:
 
 ```python
 
-from ask_schools import find_schools_by_mentee_suffix
+from ask_schools import find_school_by_operator_suffix
 
 def check_school_name_equal_toronto():
-  result = find_schools_by_mentee_suffix('_tor')
+  result = find_school_by_operator_suffix('_tor')
   assert result == 'Tordonto'
 ```
 
