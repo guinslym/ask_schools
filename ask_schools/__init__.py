@@ -20,12 +20,18 @@ school_name = {
     'McMaster':{'suffix':'_mac', 'short':'McMaster', 'full':'McMaster university'},
     'York':{'suffix':'_york', 'short':'York', 'full':'York university'},
     'Scholars Portal':{'suffix':'_sp', 'short':'Scholars Portal', 'full':'Scholars Portal'},
-    'Ottawa':{'suffix':'_ott', 'short':'Ottawa', 'full':'Ottawa University'},
+    'Ottawa':{'suffix':'_ott', 'short':'Ottawa', 'full':'Ottawa University'}
 }
 
-
-
-def find_schools_by_mentee_suffix(operator: str)-> str:
+def find_schools_by_mentee_suffix(operator: str) -> str:
+    """from a suffix find the short name of that School
+    
+    Arguments:
+        operator {str} -- suffix of the schoo i.e. _tor
+    
+    Returns:
+        str -- The short name of the school i.e. Toronto
+    """
     if "_tor" in operator:
         return "Toronto"
     elif "_int" in operator:
@@ -72,6 +78,6 @@ def find_schools_by_mentee_suffix(operator: str)-> str:
     else:
         return "Unknown"
 
-def mystery_combine(a: str, b: str, times: int) -> str:
-    return (a + b) * times
-    
+
+if __name__ == '__main__':
+    pass
