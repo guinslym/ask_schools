@@ -1,81 +1,40 @@
-# Flake8 Markdown
+# Ask Schools
 
 [
-![PyPI](https://img.shields.io/pypi/v/flake8-markdown.svg)
-![PyPI](https://img.shields.io/pypi/pyversions/flake8-markdown.svg)
-![PyPI](https://img.shields.io/github/license/guinslym/flake8-markdown.svg)
-](https://pypi.org/project/flake8-markdown/)
-[![TravisCI](https://travis-ci.org/guinslym/flake8-markdown.svg?branch=master)](https://travis-ci.org/guinslym/flake8-markdown)
+![PyPI](https://img.shields.io/pypi/v/ask_schools.svg)
+![PyPI](https://img.shields.io/pypi/pyversions/ask_schools.svg)
+![PyPI](https://img.shields.io/github/license/guinslym/ask_schools.svg)
+](https://pypi.org/project/ask_schools/)
+[![TravisCI](https://travis-ci.org/guinslym/ask_schools.svg?branch=master)](https://travis-ci.org/guinslym/ask_schools)
 
-Flake8 Markdown lints [GitHub-style Python code blocks](https://help.github.com/en/articles/creating-and-highlighting-code-blocks#fenced-code-blocks) in Markdown files using [`flake8`](https://flake8.readthedocs.io/en/stable/).
 
-This package helps improve a Python project's documentation by ensuring that code samples are error-free.
+This package helps convert Ask School suffixes to the school full name.
 
-## Features
-
-- Lints code blocks containing regular Python and Python interpreter code ([`pycon`](http://pygments.org/docs/lexers/#pygments.lexers.python.PythonConsoleLexer))
-- [pre-commit](#pre-commit-hook) hook to lint on commit
 
 ## Installation
 
-Flake8 Markdown can be installed from PyPI using `pip` or your package manager of choice:
+**Ask Schools** can be installed from PyPI using `pip` or your package manager of choice:
 
 ```
-pip install flake8-markdown
+pip install ask_schools
 ```
 
 ## Usage
 
 ### CLI
 
-You can use Flake8 Markdown as a CLI tool using the `flake8-markdown` command.
-
-`flake8-markdown` accepts one or more [globs](https://docs.python.org/3.7/library/glob.html) as its arguments.
 
 Example:
 
-```console
-$ flake8-markdown flake8-markdown "tests/samples/*.md"
-tests/samples/emphasized_lines.md:6:1: F821 undefined name 'emphasized_imaginary_function'
-tests/samples/basic.md:8:48: E999 SyntaxError: EOL while scanning string literal
-tests/samples/basic.md:14:7: F821 undefined name 'undefined_variable'
-```
+```python
 
-### pre-commit hook
+from ask_schools import find_schools_by_mentee_suffix
 
-You can also add `flake8-markdown` to your project using [pre-commit](https://pre-commit.com/). When configured, any staged Markdown files will be linted using `flake8-markdown` once you run `git commit`.
-
-To enable this hook in your local repository, add the following `repo` to your `.pre-commit-config.yaml` file:
-
-```yaml
-# .pre-commit-config.yaml
-repos:
-  - repo: https://github.com/guinslym/flake8-markdown
-    rev: v0.2.0
-    hooks:
-      - id: flake8-markdown
+def check_school_name_equal_toronto():
+  result = find_schools_by_mentee_suffix('_tor')
+  assert result == 'Tordonto'
 ```
 
 ## Code of Conduct
 
 Everyone interacting in the project's codebases, issue trackers, chat rooms, and mailing lists is expected to follow the [PyPA Code of Conduct](https://www.pypa.io/en/latest/code-of-conduct/).
-
-## History
-
-## [0.2.0] - 2019-06-14
-
-### Added
-
-- [`pycon`](http://pygments.org/docs/lexers/#pygments.lexers.python.PythonConsoleLexer) code block support
-
-### [0.1.1] - 2019-05-19
-
-#### Changed
-
-- Fixed pre-commit example in README
-
-### [0.1.0] - 2019-05-19
-
-#### Added
-
-- Added code for initial release

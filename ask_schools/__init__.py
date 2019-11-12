@@ -1,4 +1,4 @@
-__version__ = '0.1.0'
+__version__ = '0.2.2'
 
 school_name = {
     'Toronto':{'suffix':'_tor', 'short':'Toronto', 'full':'University of Toronto'},
