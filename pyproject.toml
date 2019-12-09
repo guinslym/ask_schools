@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ask_schools"
-version = "0.2.3"
+version = "0.2.4"
 description = "Ask Scholars Portal Name Conversion"
 authors = ["Guinsly Mondesir <guinslym@gmail.com>"]
 keywords = ["Ask", "Scholars Portal", "Ontario"]

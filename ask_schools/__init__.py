@@ -1,4 +1,4 @@
-__version__ = '0.2.3'
+__version__ = '0.2.4'
 
 school_name = {
     'Toronto':{'suffix':'_tor', 'short':'Toronto', 'full':'University of Toronto'},
@@ -78,6 +78,90 @@ def find_school_by_operator_suffix(operator: str) -> str:
     else:
         return "Unknown"
 
+
+def find_school_by_queue_or_profile_name(queue):
+    if queue in ["toronto-st-george", 'toronto-st-george-proactive', 'toronto-scarborough', 'toronto-mississauga']:
+        return "University of Toronto"
+    elif queue in ["york", 'york-glendon-fr', 'york-glendon']:
+        return "York University"
+    elif queue in ['guelph']:
+        return 'Guelph University'
+    elif queue in ['ryerson']:
+        return 'Ryerson University'
+    elif queue in ["western", 'western-proactive', 'western-fr']:
+        return "Western Ontario University"
+    elif queue in ["lakehead-proactive", 'lakehead']:
+        return "Lakehead University"
+    elif queue in ["mcmaster", 'mcmaster-txt']:
+        return "McMaster University"
+    elif queue in ['queens']:
+        return "Queens University"
+    elif queue in ['brock']:
+        return "Brock University"
+    elif queue in ['otech']:
+        return "Ontario Tech Universtiy"
+    elif queue in ['carleton', 'carleton-txt']:
+        return "Carleton University"
+    elif queue in ['saintpaul', 'saintpaul-fr']:
+        return "St-Paul University"
+    elif queue in ['ottawa', 'ottawa-txt', 'ottawa-fr']:
+        return "Ottawa University"
+    elif queue in ['laurentian','laurentian-fr' ]:
+        return "Laurentian University"
+    elif queue in ['guelph-humber','guelph-humber-txt' ]:
+        return "Guelph-Humber University"
+    elif queue in ["ocad"]:
+        return "OCAD University"
+    elif queue in ['algoma-proactive','algoma', 'algoma-fr']:
+        return "Algoma University"
+    elif queue in ['practice-webinars-fr', 'practice-webinars']:
+        return "SP-Practice-queue"
+    elif queue in ['scholars-portal']:
+        return "Scholars-Portal"
+    else:
+        return "Unknown"
+
+def find_school_abbr_by_queue_or_profile_name(queue):
+    if queue in ["toronto-st-george", 'toronto-st-george-proactive', 'toronto-scarborough', 'toronto-mississauga']:
+        return "UofT"
+    elif queue in ["york", 'york-glendon-fr', 'york-glendon']:
+        return "YorkU"
+    elif queue in ['guelph']:
+        return 'GuelphU'
+    elif queue in ['ryerson']:
+        return 'RyersonU'
+    elif queue in ["western", 'western-proactive', 'western-fr']:
+        return "Western"
+    elif queue in ["lakehead-proactive", 'lakehead']:
+        return "Lakehead"
+    elif queue in ["mcmaster", 'mcmaster-txt']:
+        return "McMaster"
+    elif queue in ['queens']:
+        return "Queens"
+    elif queue in ['brock']:
+        return "Brock"
+    elif queue in ['otech']:
+        return "Ontario Tech"
+    elif queue in ['carleton', 'carleton-txt']:
+        return "Carleton"
+    elif queue in ['saintpaul', 'saintpaul-fr']:
+        return "St-Paul"
+    elif queue in ['ottawa', 'ottawa-txt', 'ottawa-fr']:
+        return "Ottawa"
+    elif queue in ['laurentian','laurentian-fr' ]:
+        return "Laurentian"
+    elif queue in ['guelph-humber','guelph-humber-txt' ]:
+        return "Guelph-Humber"
+    elif queue in ["ocad"]:
+        return "OCAD"
+    elif queue in ['algoma-proactive','algoma', 'algoma-fr']:
+        return "Algoma"
+    elif queue in ['practice-webinars-fr', 'practice-webinars']:
+        return "SP-Practice"
+    elif queue in ['scholars-portal']:
+        return "Scholars-Portal"
+    else:
+        return "Unknown"
 
 if __name__ == '__main__':
     pass
