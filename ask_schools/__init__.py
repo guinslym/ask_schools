@@ -1,4 +1,4 @@
-__version__ = '0.2.4'
+__version__ = '0.2.5'
 
 school_name = {
     'Toronto':{'suffix':'_tor', 'short':'Toronto', 'full':'University of Toronto'},
@@ -162,6 +162,18 @@ def find_school_abbr_by_queue_or_profile_name(queue):
         return "Scholars-Portal"
     else:
         return "Unknown"
+
+HTF_schools = ["Brock University", "Carleton University", 
+                "Laurentian University", "University of Toronto",
+                "Ontario Tech University", "Western Ontario University", 
+                "Queens University"]
+
+def find_routing_model_by_profile_name(university_name):
+    if university_name in HTF_schools:
+        return "HTF"
+    else:
+        return "FLAT"
+
 
 if __name__ == '__main__':
     pass
