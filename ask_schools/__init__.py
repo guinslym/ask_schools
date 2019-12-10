@@ -1,4 +1,4 @@
-__version__ = '0.2.6'
+__version__ = '0.2.7'
 
 school_name = {
     'Toronto':{'suffix':'_tor', 'short':'Toronto', 'full':'University of Toronto'},
@@ -23,7 +23,7 @@ school_name = {
     'Ottawa':{'suffix':'_ott', 'short':'Ottawa', 'full':'Ottawa University'}
 }
 
-def find_school_by_operator_suffix(operator: str) -> str:
+def find_school_by_operator_suffix(operator):
     """from a suffix find the short name of that School
     
     Arguments:
@@ -32,6 +32,10 @@ def find_school_by_operator_suffix(operator: str) -> str:
     Returns:
         str -- The short name of the school i.e. Toronto
     """
+    if operator is None:
+        return operator 
+
+    
     if "_tor" in operator:
         return "Toronto"
     elif "_int" in operator:
@@ -80,6 +84,9 @@ def find_school_by_operator_suffix(operator: str) -> str:
 
 
 def find_school_by_queue_or_profile_name(queue):
+    if queue is None:
+        return queue 
+
     if queue in ["toronto-st-george", 'toronto-st-george-proactive', 'toronto-scarborough', 'toronto-mississauga']:
         return "University of Toronto"
     elif queue in ["york", 'york-glendon-fr', 'york-glendon']:
@@ -122,6 +129,9 @@ def find_school_by_queue_or_profile_name(queue):
         return "Unknown"
 
 def find_school_abbr_by_queue_or_profile_name(queue):
+    if queue is None:
+        return queue 
+
     if queue in ["toronto-st-george", 'toronto-st-george-proactive', 'toronto-scarborough', 'toronto-mississauga']:
         return "UofT"
     elif queue in ["york", 'york-glendon-fr', 'york-glendon']:
@@ -169,6 +179,8 @@ HTF_schools = ["Brock University", "Carleton University",
                 "Queens University"]
 
 def find_routing_model_by_profile_name(university_name):
+    if university_name is None:
+        return university_name
     if university_name in HTF_schools:
         return "HTF"
     else:
