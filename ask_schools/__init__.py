@@ -1,4 +1,4 @@
-__version__ = "0.3.4"
+__version__ = "0.3.5"
 
 suffixes = ["york","tor","sp","gue","otech","mac","west","ott","rye","brk","queens","lake","guehum","york.fr","ocad","car","stp.fr","lan","lan.fr","alg","int","int.fr","uoit"]
 suffixes_school = ["York University","University of Toronto","Scholars-Portal","Guelph University","Ontario Tech","McMaster University","Western  University","Ottawa University","Ryerson University","Brock University","Queen's University","Lakehead University","Guelph-Humber University","York University","OCAD University","Carleton University","Saint-Paul University","Laurentian University","Laurentian University","Algoma University","Mentee","Mentee","Ontario Tech University"]
@@ -6,7 +6,6 @@ suffixes_school = ["York University","University of Toronto","Scholars-Portal","
 queue = ["algoma","algoma-fr","brock","carleton-txt","carleton","guelph","guelph-humber","guelph-humber-txt","lakehead","laurentian","laurentian-fr","mcmaster","mcmaster-txt","ocad","otech","ottawa","ottawa-fr","ottawa-fr-txt","ottawa-txt","practice-webinars","practice-webinars-fr","practice-webinars-txt","queens","ryerson","saintpaul","saintpaul-fr","scholars-portal","toronto","toronto-mississauga","toronto-scarborough","toronto-st-george","western","western-fr","western-proactive","western-txt","york","york-glendon","york-glendon-fr","york-txt"]
 queue_simple_name = ["algoma","algoma","brock","carleton","carleton","guelph","guelph","guelph","lakehead","laurentian","laurentian","mcmaster","mcmaster","ocad","otech","ottawa","ottawa","ottawa","ottawa","practice","practice","practice","queens","ryerson","saintpaul","saintpaul","scholars","toronto","toronto","toronto","toronto","western","western","western","western","york","york","york","york"]
 queue_university = ["Algoma University","Algoma University","Brock University","Carleton University","Carleton University","Guelph University","Guelph-Humber University","Guelph-Humber University","Lakehead University","Laurentian University","Laurentian University","McMaster University","McMaster University","OCAD University","Ontario Tech","Ottawa University","Ottawa University","Ottawa University","Ottawa University","practice","practice","practice","Queen's University","Ryerson University","Saint-Paul University","Saint-Paul University","Scholars-Portal","University of Toronto","University of Toronto","University of Toronto","University of Toronto","Western University","Western University","Western University","Western University","York-University","York-University","York-University","York-University"]
-
 
 school_name = {
     'Toronto':{'suffix':'_tor', 'short':'Toronto', 'full':'University of Toronto'},
@@ -19,7 +18,7 @@ school_name = {
     'Brock':{'suffix':'_brk', 'short':'Brock', 'full':'Brock University'},
     'Guelph-Humber':{'suffix':'_guehum', 'short':'Guelph-Humber', 'full':'University of Guelph-Humber'},
     'Guelph':{'suffix':'_gue', 'short':'Guelph', 'full':'University of Guelph'},
-    'Ontario Tech':{'suffix':'_uoit', 'short':'Ontario Tech', 'full':'Ontario Tech University'},
+    'UOIT':{'suffix':'_uoit', 'short':'Ontario Tech', 'full':'Ontario Tech University'},
     'Ontario Tech':{'suffix':'_otech', 'short':'Ontario Tech', 'full':'Ontario Tech University'},
     'Saint-Paul':{'suffix':'_stp', 'short':'Saint-Paul', 'full':'Saint-Paul University'},
     'OCAD':{'suffix':'_ocad', 'short':'OCAD', 'full':'OCAD'},
@@ -87,6 +86,54 @@ def find_school_by_operator_suffix(operator):
     else:
         return "Unknown"
 
+def get_shortname_by_full_school_name(school):
+    
+    if school is None:
+        return school
+    school = school.lower()
+    
+    if 'toronto' in school:
+        return "Toronto"
+    elif "humber" in school:
+        return 'Guelph-Humber'
+    elif "ryerson" in school:
+        return 'Ryerson'
+    elif  "western" in school:
+        return "Western"
+    elif "mentee" in school:
+        return 'Mentee'
+    elif "guelph" in school:
+        return "Guelph"
+    elif "york" in school:
+        return "York"
+    elif "mcmaster" in school:
+        return "McMaster"
+    elif "tech" in school:
+        return "Ontario Tech"
+    elif "queen" in school:
+        return "Queens"
+    elif "paul" in school:
+        return "Saint-Paul"
+    elif "ottawa" in school:
+        return "Ottawa"
+    elif "brock" in school:
+        return "Brock"
+    elif "algoma" in school:
+        return "Algoma"
+    elif "laurentian" in school:
+        return "Laurentian"
+    elif "ocad" in school:
+        return "OCAD"
+    elif "uoit" in school:
+        return "Ontario Tech"
+    elif "portal" in school:
+        return "Scholars Portal"
+    elif "carleton" in school:
+        return "Carleton"
+    elif "lakehead" in school:
+        return 'Lakehead'
+    else:
+        return "unknown"
 
 def find_school_by_queue_or_profile_name(queue):
     if queue is None:
@@ -100,7 +147,7 @@ def find_school_by_queue_or_profile_name(queue):
         return 'Guelph University'
     elif queue in ['ryerson']:
         return 'Ryerson University'
-    elif queue in ["western", 'western-proactive', 'western-fr']:
+    elif queue in ["western", 'western-proactive', 'western-fr', 'western-txt']:
         return "Western Ontario University"
     elif queue in ["lakehead-proactive", 'lakehead']:
         return "Lakehead University"
@@ -110,6 +157,8 @@ def find_school_by_queue_or_profile_name(queue):
         return "Queens University"
     elif queue in ['brock']:
         return "Brock University"
+    elif queue in ['uoit']:
+        return "Ontario Tech Universtiy"
     elif queue in ['otech']:
         return "Ontario Tech Universtiy"
     elif queue in ['carleton', 'carleton-txt']:
@@ -198,13 +247,6 @@ def find_routing_model_by_profile_name(university_name):
     else:
         return "FLAT"
 
-def remove_practice_queues(chats_this_day):
-    res = [chat for chat in chats_this_day if not "practice" in chat.get("queue")]
-    return res
-
-def get_chats_answered(chats_this_day):
-    chats_answered = [chat for chat in chats_this_day if chat.get("accepted") != None]
-    return chats_answered
 
 if __name__ == '__main__':
     pass
