@@ -1,13 +1,13 @@
 [tool.poetry]
 name = "ask_schools"
-version = "0.2.7"
-description = "Ask Scholars Portal Name Conversion"
+version = "0.3.1"
+description = "Ask Scholars Portal School Name Conversion"
 authors = ["Guinsly Mondesir <guinslym@gmail.com>"]
 keywords = ["Ask", "Scholars Portal", "Ontario"]
 license = "MIT"
 readme = "README.md"
-homepage = "https://github.com/guinslym/flake8-markdown"
-repository = "https://github.com/guinslym/flake8-markdown"
+homepage = "https://github.com/guinslym/ask_schools"
+repository = "https://github.com/guinslym/ask_schools"
 classifiers = [
     "Operating System :: OS Independent",
     "Topic :: Software Development :: Documentation",
