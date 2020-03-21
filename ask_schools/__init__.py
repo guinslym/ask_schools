@@ -1,4 +1,4 @@
-__version__ = "0.3.3"
+__version__ = "0.3.4"
 
 suffixes = ["york","tor","sp","gue","otech","mac","west","ott","rye","brk","queens","lake","guehum","york.fr","ocad","car","stp.fr","lan","lan.fr","alg","int","int.fr","uoit"]
 suffixes_school = ["York University","University of Toronto","Scholars-Portal","Guelph University","Ontario Tech","McMaster University","Western  University","Ottawa University","Ryerson University","Brock University","Queen's University","Lakehead University","Guelph-Humber University","York University","OCAD University","Carleton University","Saint-Paul University","Laurentian University","Laurentian University","Algoma University","Mentee","Mentee","Ontario Tech University"]
@@ -201,6 +201,10 @@ def find_routing_model_by_profile_name(university_name):
 def remove_practice_queues(chats_this_day):
     res = [chat for chat in chats_this_day if not "practice" in chat.get("queue")]
     return res
+
+def get_chats_answered(chats_this_day):
+    chats_answered = [chat for chat in chats_this_day if chat.get("accepted") != None]
+    return chats_answered
 
 if __name__ == '__main__':
     pass
