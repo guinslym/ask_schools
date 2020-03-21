@@ -28,7 +28,7 @@ Example:
 
 from ask_schools import find_school_by_operator_suffix
 
-def check_school_name_equal_toronto():
+def test_check_school_name_equal_toronto():
   result = find_school_by_operator_suffix('_tor')
   assert result == 'Tordonto'
 ```
