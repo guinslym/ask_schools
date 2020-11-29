@@ -1,7 +1,7 @@
-__version__ = "0.3.5"
+__version__ = "0.3.8"
 
 suffixes = ["york","tor","sp","gue","otech","mac","west","ott","rye","brk","queens","lake","guehum","york.fr","ocad","car","stp.fr","lan","lan.fr","alg","int","int.fr","uoit"]
-suffixes_school = ["York University","University of Toronto","Scholars-Portal","Guelph University","Ontario Tech","McMaster University","Western  University","Ottawa University","Ryerson University","Brock University","Queen's University","Lakehead University","Guelph-Humber University","York University","OCAD University","Carleton University","Saint-Paul University","Laurentian University","Laurentian University","Algoma University","Mentee","Mentee","Ontario Tech University"]
+suffixes_school = ["York University","University of Toronto","Scholars-Portal","Guelph University","Ontario Tech","McMaster University","Western University","Ottawa University","Ryerson University","Brock University","Queen's University","Lakehead University","Guelph-Humber University","York University","OCAD University","Carleton University","Saint-Paul University","Laurentian University","Laurentian University","Algoma University","Mentees","Mentees","Ontario Tech University"]
 
 queue = ["algoma","algoma-fr","brock","carleton-txt","carleton","guelph","guelph-humber","guelph-humber-txt","lakehead","laurentian","laurentian-fr","mcmaster","mcmaster-txt","ocad","otech","ottawa","ottawa-fr","ottawa-fr-txt","ottawa-txt","practice-webinars","practice-webinars-fr","practice-webinars-txt","queens","ryerson","saintpaul","saintpaul-fr","scholars-portal","toronto","toronto-mississauga","toronto-scarborough","toronto-st-george","western","western-fr","western-proactive","western-txt","york","york-glendon","york-glendon-fr","york-txt"]
 queue_simple_name = ["algoma","algoma","brock","carleton","carleton","guelph","guelph","guelph","lakehead","laurentian","laurentian","mcmaster","mcmaster","ocad","otech","ottawa","ottawa","ottawa","ottawa","practice","practice","practice","queens","ryerson","saintpaul","saintpaul","scholars","toronto","toronto","toronto","toronto","western","western","western","western","york","york","york","york"]
@@ -9,7 +9,7 @@ queue_university = ["Algoma University","Algoma University","Brock University","
 
 school_name = {
     'Toronto':{'suffix':'_tor', 'short':'Toronto', 'full':'University of Toronto'},
-    'Mentee':{'suffix':'_int', 'short':'Mentee', 'full':'Mentee'},
+    'Mentees':{'suffix':'_int', 'short':'Mentees', 'full':'Mentees'},
     'Western':{'suffix':'_west', 'short':'Western', 'full':'University of Western Ontario'},
     'Carleton':{'suffix':'_car', 'short':'Carleton', 'full':'Carleton University'},
     'Ryerson':{'suffix':'_rye', 'short':'Ryerson', 'full':'Ryerson University'},
@@ -46,7 +46,7 @@ def find_school_by_operator_suffix(operator):
     if "_tor" in operator:
         return "Toronto"
     elif "_int" in operator:
-        return "Mentee"
+        return "Mentees"
     elif "_west" in operator:
         return "Western"
     elif "_car" in operator:
@@ -100,8 +100,8 @@ def get_shortname_by_full_school_name(school):
         return 'Ryerson'
     elif  "western" in school:
         return "Western"
-    elif "mentee" in school:
-        return 'Mentee'
+    elif "mentees" in school:
+        return 'Mentees'
     elif "guelph" in school:
         return "Guelph"
     elif "york" in school:
